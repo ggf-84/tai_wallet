@@ -1,0 +1,1844 @@
+/*!* Taiko NFT Marketplace - Complete Styles with NFT Detail Page *!*/
+
+/*!** {*!*/
+/*!*    margin: 0;*!*/
+/*!*    padding: 0;*!*/
+/*!*    box-sizing: border-box;*!*/
+/*!*}*!*/
+
+/*!*body {*!*/
+/*!*    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*!*/
+/*!*    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*!*/
+/*!*    min-height: 100vh;*!*/
+/*!*    color: #333;*!*/
+/*!*}*!*/
+
+.tairun-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Button Styles */
+.tairun-container .btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.tairun-container .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tairun-container .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.tairun-container .btn-secondary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.tairun-container .btn-success {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.tairun-container .btn-warning {
+    background: linear-gradient(135deg, #ffa726 0%, #ff7043 100%);
+}
+
+.tairun-container .btn-danger {
+    background: linear-gradient(135deg, #ff5722 0%, #e91e63 100%);
+}
+
+.tairun-container .btn-small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+/* Navigation Styles */
+.tairun-container .nav-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tairun-container .nav-tab {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #795548;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tairun-container .nav-tab.active {
+    background: #673AB7;
+    color: #ffffff;
+}
+
+.tairun-container .tab-content {
+    display: none;
+}
+
+.tairun-container .tab-content.active {
+    display: block;
+}
+
+.tairun-container .content-section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.tairun-container .breadcrumb {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.tairun-container .breadcrumb a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.tairun-container .breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Collections Grid */
+.tairun-container .collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.tairun-container .collection-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tairun-container .collection-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.tairun-container .collection-banner {
+    position: relative;
+}
+
+.tairun-container .collection-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.tairun-container .collection-info {
+    padding: 50px 20px 20px;
+    text-align: center;
+}
+
+.tairun-container .collection-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.tairun-container .collection-description {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.tairun-container .collection-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
+
+.tairun-container .collection-stat {
+    text-align: center;
+}
+
+.tairun-container .collection-stat-value {
+    font-weight: bold;
+    font-size: 18px;
+    color: #667eea;
+}
+
+.tairun-container .collection-stat-label {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* Collection Page Tabs */
+.tairun-container .collection-nav {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    align-items: center;
+}
+
+.tairun-container .collection-nav-tab {
+    padding: 15px 25px;
+    background: none;
+    border: none;
+    color: #666;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tairun-container .collection-nav-tab.active {
+    color: #667eea;
+    border-bottom-color: #667eea;
+}
+
+.tairun-container .collection-tab-content {
+    display: none;
+}
+
+.tairun-container .collection-tab-content.active {
+    display: block;
+}
+
+/* Filters */
+.tairun-container .filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.tairun-container .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tairun-container .filter-group label {
+    font-weight: 600;
+    color: #555;
+}
+
+.tairun-container .filter-input {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.tairun-container .filter-input:focus {
+    border-color: #667eea;
+}
+
+/* NFT Grid */
+.tairun-container .nft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tairun-container .nft-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.tairun-container .nft-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tairun-container .nft-card.selected {
+    border: 3px solid #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3);
+}
+
+.tairun-container .nft-card.listed {
+    border-left: 5px solid #28a745;
+}
+
+.tairun-container .tairun-container .nft-image {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #666;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tairun-container .nft-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.tairun-container .nft-details {
+    padding: 20px;
+}
+
+.tairun-container .nft-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.tairun-container .nft-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.tairun-container .nft-info {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* NFT Detail Page Styles */
+.tairun-container .nft-detail-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.tairun-container .nft-detail-main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tairun-container .nft-detail-image {
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.tairun-container .nft-image-large {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-size: 120px;
+    color: #667eea;
+    position: relative;
+}
+
+.tairun-container .nft-image-large img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.tairun-container .listing-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.tairun-container .listing-status.for-sale {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.tairun-container .listing-status.not-listed {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    color: #666;
+}
+
+.tairun-container .listing-status.sold {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #666;
+}
+
+.tairun-container .nft-detail-info {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.tairun-container .nft-detail-header {
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 20px;
+}
+
+.tairun-container .nft-detail-header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tairun-container .nft-collection-link {
+    font-size: 16px;
+    color: #667eea;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.tairun-container .nft-collection-link:hover {
+    color: #5a67d8;
+}
+
+.tairun-container .nft-detail-price {
+    margin-bottom: 25px;
+}
+
+.tairun-container .current-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.tairun-container .price-usd {
+    font-size: 16px;
+    color: #666;
+}
+
+.tairun-container .nft-detail-description {
+    margin-bottom: 25px;
+}
+
+.tairun-container .nft-detail-description h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tairun-container .nft-detail-description p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.tairun-container .nft-listing-info {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.tairun-container .listing-expiry {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.tairun-container .listing-expiry.urgent {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.tairun-container .owner-info {
+    font-size: 14px;
+    color: #666;
+}
+
+.tairun-container .nft-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tairun-container .nft-action-btn {
+    flex: 1;
+    min-width: 150px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.tairun-container .nft-detail-secondary {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tairun-container .nft-properties,
+.tairun-container .nft-offers-section,
+.tairun-container .nft-collection-offers-section,
+.tairun-container .nft-history-section {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tairun-container .nft-properties h3,
+.tairun-container .nft-offers-section h3,
+.tairun-container .nft-collection-offers-section h3,
+.tairun-container .nft-history-section h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.tairun-container .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.tairun-container .property-item {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.tairun-container .property-type {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.tairun-container .property-value {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.tairun-container .collection-offers-info {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #e7f3ff;
+    border-radius: 6px;
+    border-left: 4px solid #007bff;
+}
+
+.tairun-container .offers-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.tairun-container .history-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.tairun-container .nft-offer-item {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f8f9fa;
+}
+
+.tairun-container .nft-offer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.tairun-container .nft-offer-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.tairun-container .nft-offer-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.tairun-container .nft-offer-details {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.tairun-container .nft-offer-type {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tairun-container .nft-offer-type.individual {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.tairun-container .nft-offer-type.collection {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.tairun-container .history-item {
+    border-bottom: 1px solid #e9ecef;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tairun-container .history-item:last-child {
+    border-bottom: none;
+}
+
+.tairun-container .history-action {
+    font-weight: bold;
+    color: #333;
+}
+
+.tairun-container .history-details {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.tairun-container .history-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.tairun-container .history-time {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Offers Section */
+.tairun-container .offers-section {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.tairun-container .offers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tairun-container .offer-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tairun-container .offer-info {
+    flex: 1;
+}
+
+.tairun-container .offer-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.tairun-container .offer-details {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.tairun-container .offer-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Activity Timeline */
+.tairun-container .activity-timeline {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.tairun-container .activity-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease;
+}
+
+.tairun-container .activity-item:hover {
+    background: #f8f9fa;
+}
+
+.tairun-container .activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.tairun-container .activity-icon.listed {
+    background: #e3f2fd;
+    color: #2196f3;
+}
+
+.tairun-container .activity-icon.sold {
+    background: #e8f5e8;
+    color: #4caf50;
+}
+
+.tairun-container .activity-icon.cancelled {
+    background: #ffeaa7;
+    color: #fdcb6e;
+}
+
+.tairun-container .activity-icon.offer_made {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.tairun-container .activity-icon.offer_accepted {
+    background: #d4edda;
+    color: #155724;
+}
+
+.tairun-container .activity-icon.offer_cancelled {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.tairun-container .activity-icon.offer_rejected {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.tairun-container .activity-content {
+    flex: 1;
+}
+
+.tairun-container .activity-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.tairun-container .activity-details {
+    font-size: 14px;
+    color: #666;
+    margin-top: 2px;
+}
+
+.tairun-container .activity-time {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Form Styles */
+.tairun-container .form-group {
+    margin-bottom: 20px;
+}
+
+.tairun-container .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+.tairun-container .form-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-size: 16px;
+}
+
+.tairun-container .form-input:focus {
+    border-color: #667eea;
+}
+
+/* Status Messages */
+.tairun-container .loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.tairun-container .error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+}
+
+.tairun-container .success {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+}
+
+.tairun-container .info {
+    background: #d1ecf1;
+    color: #0c5460;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #bee5eb;
+}
+
+.tairun-container .warning {
+    background: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ffeaa7;
+}
+
+/* Modal Styles */
+.tairun-container .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tairun-container .modal-content {
+    background-color: white;
+    margin: 2% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.tairun-container .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tairun-container .close:hover {
+    color: #000;
+}
+
+.tairun-container .back-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.tairun-container .back-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Shopping Cart */
+.tairun-container .cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.tairun-container .cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff5722;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.tairun-container .cart-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+}
+
+.tairun-container .cart-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tairun-container .cart-item:last-child {
+    border-bottom: none;
+}
+
+/* Admin Panel */
+.tairun-container .admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.tairun-container .admin-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tairun-container .admin-card h4 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.tairun-container .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tairun-container .stat-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.tairun-container .stat-value {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.tairun-container .stat-label {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.tairun-container .collections-list {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+.tairun-container .collection-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.tairun-container .collection-item-info {
+    width: 75%;
+}
+
+.tairun-container .collection-item-info h5 {
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.tairun-container .collection-item-info p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* NFT Selection Grid for Modal */
+.tairun-container .nft-selection-card {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.tairun-container .nft-selection-card:hover {
+    border-color: #667eea;
+    transform: scale(1.05);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+    .tairun-container .nft-detail-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .tairun-container .nft-detail-secondary {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .tairun-container .header-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tairun-container .wallet-section {
+        justify-content: center;
+    }
+
+    .tairun-container .nav-tabs {
+        flex-direction: column;
+    }
+
+    .tairun-container .collections-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tairun-container .nft-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .tairun-container .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tairun-container  .collection-nav {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /*.admin-grid {*/
+    /*    grid-template-columns: 1fr;*/
+    /*}*/
+
+    .tairun-container  .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 20px;
+    }
+
+    .tairun-container  .nft-image-large {
+        height: 300px;
+        font-size: 80px;
+    }
+
+    .tairun-container  .nft-detail-header h1 {
+        font-size: 24px;
+    }
+
+    .tairun-container  .current-price {
+        font-size: 22px;
+    }
+
+    .tairun-container .nft-actions {
+        flex-direction: column;
+    }
+
+    .tairun-container  .nft-action-btn {
+        min-width: auto;
+    }
+
+    .tairun-container  .properties-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .tairun-container .container {
+        padding: 10px;
+    }
+
+    .tairun-container .content-section {
+        padding: 20px 10px;
+    }
+
+    .tairun-container .nft-image-large {
+        height: 250px;
+        font-size: 60px;
+    }
+
+    .tairun-container .nft-detail-info {
+        padding: 20px;
+    }
+
+    .tairun-container .nft-properties,
+    .tairun-container .nft-offers-section,
+    .tairun-container .nft-collection-offers-section,
+    .tairun-container .nft-history-section {
+        padding: 15px;
+    }
+}
+
+/* ============================================================================ */
+/* 💰 TAIKO NFT MARKETPLACE - OFFER SYSTEM STYLES */
+/* ============================================================================ */
+
+/* Offers Grid Layout */
+.tairun-container .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Individual Offer Card */
+.tairun-container .offer-card {
+    background: linear-gradient(135deg, #ffffff, #f8f9ff);
+    border: 1px solid #e0e7ff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tairun-container .offer-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(102, 126, 234, 0.15);
+    border-color: #667eea;
+}
+
+/* Offer Card Header */
+.tairun-container .offer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tairun-container .offer-type {
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tairun-container .offer-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tairun-container .offer-status.active {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.tairun-container .offer-status.expired {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.tairun-container .offer-status.cancelled {
+    background: linear-gradient(135deg, #6b7280, #4b5563);
+    color: white;
+}
+
+.tairun-container .offer-status.accepted {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+}
+
+.tairun-container .offer-status.completed {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+}
+
+/* Offer Details */
+.tairun-container .offer-details {
+    margin-bottom: 20px;
+}
+
+.tairun-container .offer-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tairun-container .offer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tairun-container .offer-info > div {
+    font-size: 14px;
+    color: #6b7280;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tairun-container .offer-info > div:first-child {
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Offer Actions */
+.tairun-container .offer-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.tairun-container .offer-actions .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    min-width: 80px;
+}
+
+.tairun-container .offer-actions .btn-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.tairun-container .offer-actions .btn-success:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-1px);
+}
+
+.tairun-container .offer-actions .btn-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.tairun-container .offer-actions .btn-danger:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    transform: translateY(-1px);
+}
+
+.tairun-container .offer-actions .btn-small {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+/* Offers Section */
+.tairun-container .offers-section {
+    margin-bottom: 40px;
+}
+
+.tairun-container .offers-section h4 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e5e7eb;
+    position: relative;
+}
+
+.tairun-container .offers-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 1px;
+}
+
+/* No Offers State */
+.tairun-container .no-offers {
+    background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+    border: 2px dashed #d1d5db;
+    border-radius: 12px;
+    margin: 20px 0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.tairun-container .no-offers:hover {
+    border-color: #667eea;
+    background: linear-gradient(135deg, #fafbff, #f0f4ff);
+}
+
+.tairun-container .no-offers h4 {
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+.tairun-container .no-offers p {
+    color: #9ca3af;
+    margin-bottom: 0;
+}
+
+/* Offer Modals Enhancement */
+.tairun-container .modal-content {
+    position: relative;
+    overflow: visible;
+}
+
+.tairun-container .modal-content .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #6b7280;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+.tairun-container .modal-content .close:hover {
+    color: #ef4444;
+}
+
+/* Form Enhancements for Offer Modals */
+.tairun-container .form-group {
+    margin-bottom: 20px;
+}
+
+.tairun-container .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+    font-size: 14px;
+}
+
+.tairun-container .form-input {
+    width: -webkit-fill-available;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.tairun-container .form-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.tairun-container .form-input:disabled,
+.tairun-container .form-input[readonly] {
+    background-color: #f9fafb;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+/* Button Enhancements */
+.tairun-container .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tairun-container .btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.tairun-container .btn:hover:before {
+    left: 100%;
+}
+
+.tairun-container .btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.tairun-container .btn-primary:hover {
+    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.tairun-container .btn-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.tairun-container .btn-success:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.tairun-container .btn-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.tairun-container .btn-danger:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.tairun-container .btn-secondary {
+    background: linear-gradient(135deg, #6b7280, #4b5563);
+    color: white;
+}
+
+.tairun-container .btn-secondary:hover {
+    background: linear-gradient(135deg, #4b5563, #374151);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(107, 114, 128, 0.4);
+}
+
+/* Info Boxes */
+.tairun-container .info-box {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid;
+}
+
+.tairun-container .info-box.info {
+    background: #e7f3ff;
+    border-color: #007bff;
+    color: #004085;
+}
+
+.tairun-container .info-box.success {
+    background: #e8f5e8;
+    border-color: #4caf50;
+    color: #2e7d32;
+}
+
+.tairun-container .info-box.warning {
+    background: #fff3cd;
+    border-color: #ffc107;
+    color: #856404;
+}
+
+.tairun-container .info-box.error {
+    background: #ffebee;
+    border-color: #f44336;
+    color: #c62828;
+}
+
+.tairun-container .info-box h5 {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.tairun-container .info-box p,
+.tairun-container .info-box ul {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.tairun-container .info-box ul {
+    padding-left: 20px;
+}
+
+/* Loading States */
+.tairun-container .loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6b7280;
+}
+
+.tairun-container .loading h3 {
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tairun-container .offers-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .tairun-container  .offer-card {
+        padding: 15px;
+    }
+
+    .tairun-container .offer-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .tairun-container  .offer-actions .btn {
+        width: 100%;
+    }
+
+    .tairun-container .offer-price {
+        font-size: 20px;
+    }
+
+    .tairun-container  .modal-content {
+        margin: 10px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+/* Animation for new offers */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tairun-container .offer-card {
+    animation: slideInUp 0.5s ease-out;
+}
+
+/* Pulse animation for active offers */
+.tairun-container .offer-status.active {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Gradient backgrounds for better visual hierarchy */
+.tairun-container .offers-section:nth-child(odd) {
+    background: linear-gradient(135deg, #fafbff 0%, #ffffff 100%);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* Collection offer total highlight */
+.tairun-container #collectionOfferTotal {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* Enhanced offer actions layout */
+.tairun-container .offer-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e7eb;
+    align-items: center;
+}
+
+.tairun-container .offer-actions .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    min-width: 80px;
+    position: relative;
+}
+
+.tairun-container .offer-actions .btn-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.tairun-container .offer-actions .btn-success:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-1px);
+}
+
+.tairun-container .offer-actions .btn-warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+}
+
+.tairun-container .offer-actions .btn-warning:hover {
+    background: linear-gradient(135deg, #d97706, #b45309);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.tairun-container .offer-actions .btn-small {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+/* Tooltip effect for cancel button */
+.tairun-container .offer-actions .btn-warning:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-bottom: 5px;
+}
+
+.tairun-container .offer-actions .btn-warning:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+    margin-bottom: -5px;
+    z-index: 1000;
+}
+
+/* Status indicators for cancelled offers */
+.tairun-container .offer-status.cancelled {
+    background: linear-gradient(135deg, #6b7280, #4b5563);
+    color: white;
+    position: relative;
+}
+
+.tairun-container .offer-status.cancelled::after {
+    content: '📱';
+    margin-left: 4px;
+}
+
+/* Animation for cancellation */
+@keyframes cancelFade {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 0.3;
+        transform: scale(0.9);
+        filter: grayscale(100%);
+    }
+}
+
+.tairun-container .offer-card.cancelling {
+    animation: cancelFade 0.5s ease-out forwards;
+}
+
+/* Success indicator for free cancellation */
+.tairun-container .free-cancel-success {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+    border: 1px solid #10b981;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 10px 0;
+    text-align: center;
+    color: #047857;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.tairun-container .free-cancel-success::before {
+    content: '🎉 ';
+}
+
+/* Info box for cancellation explanation */
+.tairun-container .cancellation-info {
+    background: linear-gradient(135deg, #e0f2fe, #b3e5fc);
+    border: 1px solid #0288d1;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.tairun-container .cancellation-info h5 {
+    color: #01579b;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.tairun-container .cancellation-info p {
+    color: #0277bd;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .tairun-container  .offer-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .tairun-container  .offer-actions .btn {
+        width: 100%;
+    }
+}
+
+/* Enhanced hover effects */
+.tairun-container .offer-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 12px;
+}
+
+.tairun-container .offer-card:hover::after {
+    opacity: 1;
+}

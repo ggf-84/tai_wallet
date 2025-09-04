@@ -1,0 +1,1335 @@
+:root {
+    --primary-color: #e5478c;
+    --secondary-color: #6173fb;
+    --bg-color: #ffffff;
+    --surface-color: #eaeaea;
+    --text-color: #212529;
+    --text-secondary: #6c757d;
+    --border-color: #dee2e6;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0d1117;
+    --surface-color: #161b22;
+    --text-color: #f0f6fc;
+    --text-secondary: #8b949e;
+    --border-color: #30363d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.nav button:hover {
+    color: var(--primary-color);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart-action{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+
+}
+
+.header-cart {
+    background: none;
+    position: relative;
+    color: var(--text-secondary);
+    margin-right: 5px;
+}
+
+.cart-count {
+    font-size: 0.8rem;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -12px;
+    right: -15px;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--border-color);
+}
+
+.wallet-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.wallet-info .address-balance {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    /*transform: translateY(-2px);*/
+    box-shadow: 0 4px 12px rgba(229, 71, 140, 0.4);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary:hover {
+    /*transform: translateY(-2px);*/
+    box-shadow: 0 4px 12px rgba(97, 115, 251, 0.4);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Wallet Modal */
+.wallet-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab {
+    padding: 0.75rem 1rem;
+    border: none;
+    background: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.tab.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.wallet-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.p-wallet {
+    font-size: 0.9rem;
+    color: var(--text-secondary)
+}
+
+.wallet-form-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin-bottom: 10px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.modal-body .change-price-modal,
+.modal-body .listing-modal{
+    display: flex!important;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-body input,
+.modal-body select,
+.wallet-form select,
+.wallet-form input,
+.wallet-form textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+.wallet-form textarea {
+    min-height: 100px;
+    resize: vertical;
+    resize: none;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1001;
+    animation: slideIn 0.3s ease;
+}
+
+.toast-success {
+    background-color: var(--success-color);
+}
+
+.toast-error {
+    background-color: var(--danger-color);
+}
+
+.toast-info {
+    background-color: var(--secondary-color);
+}
+
+.toast button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Main Content */
+.main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+/* Home */
+.home h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+/* Collection Card */
+.collection-card {
+    position: relative;
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.collection-card:hover {
+    /*transform: translateY(-4px);*/
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.collection-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.collection-info {
+    padding: 0.5rem 1rem;
+}
+
+.collection-items {
+    margin-top: -12px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.collection-card .is-new {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 0.9rem;
+    color: #f8f9fa;
+    padding: 0 5px;
+    background: var(--secondary-color);
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+.collection-card .is-tairun {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    font-size: 1rem;
+    color: var(--primary-color);
+    padding: 2px 6px 4px;
+    background: #F8F9FAFF;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 25px;
+}
+
+.nft-tairun {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    font-size: 0.9rem;
+    padding: 2px 6px 5px;
+    background: var(--primary-color);
+    color: #F8F9FAFF;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 25px;
+}
+
+.collection-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.collection-info p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.collection-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.collection-details .collection-stats {
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+/* Collection Page */
+.collection-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.collection-header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.collection-details h1 {
+    margin-bottom: 0.5rem;
+}
+
+.collection-details p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.collection-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-reset {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: end;
+}
+
+.filter-reset button{
+    padding: 10px 30px;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+.price-inputs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.price-inputs input {
+    width: 80px;
+}
+
+/* NFT Grid */
+.nfts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.nfts-view-more-section {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.nfts-page-items {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+/* NFT Card */
+.nft-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nft-card:hover {
+    /*transform: translateY(-2px);*/
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nft-image {
+    position: relative;
+}
+
+.nft-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.nft-status {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.nft-status.listed {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.nft-status.type {
+    background-color: var(--secondary-color);
+    color: white;
+    right: 0.5rem;
+    left: auto;
+}
+
+.nft-status.not-listed {
+    background-color: var(--text-secondary);
+    color: white;
+}
+
+.nft-info {
+    padding: 0 1rem;
+    line-height: 1.5rem;
+}
+
+.nft-info .nft-price{
+    line-height: 1;
+}
+
+.nft-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.nft-info p {
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.price-eth {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-right: 0.5rem;
+}
+
+.price-separator {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.price-usd {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.my-nft .nft-info h3 {
+    font-size: 0.9rem;
+}
+
+.my-nft .price-eth,
+.my-nft .price-usd {
+    font-size: 0.8rem;
+}
+
+.my-nft .price-separator {
+    font-size: 0.7rem;
+}
+
+.my-nft-body {
+    cursor: pointer;
+    max-height: 255px;
+    height: 255px;
+}
+.mynfts-content {
+    position: relative;
+}
+.listing-btn {
+    position: absolute;
+    top: -60px;
+    right: 0;
+}
+.my-nft.selected {
+    border: 3px solid var(--secondary-color);
+}
+.my-nft.selected .my-nft-body{
+    height: 249px;
+}
+
+.btn:hover {
+    opacity: .8;
+}
+
+.btn:active {
+    opacity: 1;
+}
+
+.nft-actions {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 10px 10px;
+}
+.nft-actions div {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.nft-actions .btn {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* NFT Detail */
+.nft-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.nft-image-large img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 12px;
+}
+
+.nft-info-large h1 {
+    margin-bottom: 0.5rem;
+}
+
+.nft-info-large h2 {
+    margin-bottom: 0.7rem;
+    color: var(--text-secondary);
+}
+
+.nft-info-large p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.nft-price-large {
+    margin-bottom: 2rem;
+}
+
+.nft-price-large span {
+    display: block;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.nft-actions-large {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Active Listings */
+.active-listings h2 {
+    margin-bottom: 1rem;
+}
+
+.listings-table {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.listing-header,
+.listing-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+}
+
+.listing-header {
+    background-color: var(--border-color);
+    font-weight: 600;
+}
+
+.listing-row {
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-secondary)
+}
+
+.listing-row:last-child {
+    border-bottom: none;
+}
+
+.listing-row .actions {
+    display: flex;
+    column-gap: 0.5rem;
+    /*align-items: center;*/
+}
+
+@media (min-width: 768px) {
+    .listing-row .actions button:last-child {
+        min-width: 105px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Admin */
+.admin-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.login-form {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-form h1 {
+    margin-bottom: 1.5rem;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+.admin-panel h1 {
+    margin-bottom: 2rem;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.admin-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.admin-actions input {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+.admin-collection-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.fee-balance {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.balance-amount {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.balance-amount span:first-child {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.balance-amount span:last-child {
+    color: var(--text-secondary);
+}
+
+.admin-panel  input,
+.admin-panel  select,
+.admin-panel  select,
+.admin-panel  input,
+.admin-panel  textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+.admin-collections .manage-collection {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+}
+
+.admin-collections .manage-collection .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.admin-collections .manage-collection .form-group small{
+    color: var(--text-secondary);
+}
+
+.admin-collections .current-collections {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+.admin-collections .current-collections .collection-card {
+    display: flex;
+    row-gap: 8px;
+    align-items: center;
+    padding-left: 8px;
+}
+
+.admin-collections .current-collections .collection-card .collection-card-body{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0.8rem;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+.admin-collections .current-collections .collection-card .collection-card-body h5{
+    font-size: 0.9rem;
+}
+
+.admin-panel h4 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.admin-panel .current-collections .collection-list,
+.admin-panel .admin-activities .stats-grid,
+.admin-panel .admin-marketplace-stats .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(48%, 2fr));
+    gap: 1.5rem;
+}
+
+.admin-panel .activities-label {
+    margin-bottom: 15px;
+}
+
+.admin-panel .last-activities {
+    margin-top: 30px;
+}
+
+.admin-panel .admin-marketplace-stats .stat-card {
+
+}
+.admin-panel .admin-marketplace-stats .stat-value {
+
+}
+.admin-panel .admin-marketplace-stats .stat-label {
+
+}
+
+/*Cart Drawer*/
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-left: 1px solid var(--border-color);
+    padding: 20px;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.cart-drawer h3 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 10px;
+}
+
+.cart-list {
+    list-style: none;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    margin-top: 10px;
+}
+
+.cart-list:last-child {
+    padding-bottom: 100px;
+}
+
+.main-cart-list {
+    margin-bottom: 50px;
+    max-height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: thin;               /* Firefox */
+    scrollbar-color: var(--primary-color) transparent; /* Firefox */
+}
+
+/* Chrome, Edge, Safari */
+.main-cart-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main-cart-list::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+.main-cart-list::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    border: 2px solid var(--secondary-color); /* optional padding */
+}
+
+.cart-list li {
+    margin-bottom: 25px;
+    color: var(--text-secondary);
+}
+.cart-item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem
+}
+.cart-item img{
+    width: 120px;
+    height: 120px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+.cart-item div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.close-cart {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 1.5rem;
+    background: transparent;
+    cursor: pointer;
+}
+.cart-actions {
+    justify-content: start;
+    align-items: center!important;
+    flex-direction: row!important;
+    gap: 0.4rem;
+    width: 100%;
+}
+.cart-actions .btn{
+    padding: 10px 17px;
+}
+
+/*Purchase Modal*/
+.dialog-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: #000000ab;
+    z-index: 50;
+}
+
+.dialog-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 60;
+}
+
+.dialog-panel {
+    background-color: var(--surface-color);
+    border: 1px solid rgba(170, 170, 170, 0.24);
+    padding: 30px 30px 50px;
+    border-radius: 12px;
+    text-align: center;
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 70;
+    max-width: 85%;
+    width: 370px;
+}
+
+.dialog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.dialog-content {
+    font-size: 17px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.dialog-content .purchase-info{
+    width: 270px;
+    margin: auto;
+}
+
+.dialog-content .info{
+    display: flex;
+    justify-content: start;
+}
+
+.dialog-content .purchase-info .label {
+    font-size: 1rem;
+    width: 65px;
+    font-weight: bold;
+    margin-right: 15px;
+    text-align: start;
+}
+
+.dialog-content .purchase-step {
+    padding-top: 20px;
+    width: 270px;
+    margin: auto;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: start;
+}
+
+.dialog-content .purchase-info span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: start;
+}
+
+.dialog-content div {
+    margin-bottom: 8px;
+}
+
+.dialog-content code {
+    word-break: break-word;
+    font-size: 15px;
+}
+.dialog-content span {
+    font-size: 20px;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Back to top*/
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    z-index: 9999;
+}
+
+.back-to-top:hover {
+    background-color: #333;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .collection-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nft-detail-content {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .filter-reset .btn{
+        width: 50%;
+    }
+
+    .nft-actions-large {
+        flex-direction: column;
+    }
+
+    .wallet-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .collection-details h1 {
+        font-size: 1.2rem;
+    }
+
+    .collection-info {
+        padding: 1rem;
+    }
+
+    .collection-info .collection-stats {
+        flex-direction: column;
+        width: 50%;
+        display: inline-flex
+    }
+    .collection-details .collection-stats {
+        flex-direction: column;
+    }
+    .collection-tabs {
+        gap: 0.4rem;
+    }
+    .price-inputs input {
+        width: 100%;
+    }
+
+    .listing-header {
+        display: none; /* ascunde header-ul pe mobil */
+    }
+
+    .listing-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem;
+        align-items: start;
+    }
+
+    .listing-row > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--text-secondary);
+    }
+
+    .listing-row > div::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--text-secondary);
+        padding-right: 10px;
+    }
+
+    .listing-row > div.actions::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--text-secondary);
+        padding-right: 0;
+    }
+
+    .listing-row .actions {
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 0.5rem;
+    }
+    .listing-row .actions button:first-child{
+        margin-left: -0.5rem;
+    }
+
+    .nfts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+        gap: 0.5rem;
+        margin-top: 30px;
+    }
+    .price-eth {
+        display: block;
+    }
+    .price-separator {
+        display: none;
+    }
+    .nft-info {
+        line-height: 1.5rem;
+    }
+    .nft-info h3{
+        font-size: 1rem;
+    }
+    .nft-card .nft-actions .btn{
+        padding: 0.5rem .2rem;
+        font-size: 0.7rem;
+    }
+    .nft-card .nft-image img {
+        height: 175px;
+    }
+    .admin-collections .current-collections .collection-card {
+        flex-direction: column;
+        align-items: center;
+    }
+}
