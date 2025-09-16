@@ -172,7 +172,6 @@ const PurchaseNft = ({nft, price = null}) => {
     );
   }
 
-  return '';
-
+  return <Button className="btn-not-listed">Not Listed</Button>;
 };
 export default PurchaseNft;

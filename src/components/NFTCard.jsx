@@ -42,13 +42,17 @@ const NFTCard = ({ nft }) => {
         </div>
         <div className="nft-info">
           <h3>{nft.name}</h3>
-          {(nft.sale && typeof nft.sale?.price === 'number' && nft.sale?.price > 0) && (
+          {(nft.sale && typeof nft.sale?.price === 'number' && nft.sale?.price > 0) ? (
             <div className="nft-price">
               <span className="price-eth">{nft.sale?.price} ETH</span>
               <span className="price-separator">/ </span>
               <span className="price-usd">${nft.sale?.usdPrice.toFixed(2)}</span>
             </div>
-          )}
+          ) : <div className="nft-price">
+            <span className="price-eth">ETH</span>
+            <span className="price-separator">/ </span>
+            <span className="price-usd"> USD</span>
+          </div>}
         </div>
       </div>
 

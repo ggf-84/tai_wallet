@@ -50,16 +50,17 @@ const Collection = () => {
   const perPage = 50;
   const collection = state.collection
 
-  const fetchNFTs = async (reset = true) => {
+  const fetchNFTs = async (reset = true, page = 1) => {
     setLoading(true);
     try {
       const data = await getNftCollection({
         sortBy,
         priceRangeMin: priceMin,
         priceRangeMax: priceMax,
-        pageNum: currentPage,
+        pageNum: page,
         pageSize: perPage,
-        projectIn: [projectId],
+        projectIn: [parseInt(projectId)],
+        stateIn: statusFilter === 'all' ? ["hasOffer", "buyNow"] : ["buyNow"]
       });
 
       const items = data.data?.list || [];
@@ -92,6 +93,7 @@ const Collection = () => {
     setSortBy('makeOrderUsd');
     setPriceMin('');
     setPriceMax('');
+    setCurrentPage(1);
   }
 
   const handleRefresh = async () => {
@@ -100,7 +102,6 @@ const Collection = () => {
 
   useEffect(() => {
     fetchNFTs();
-    console.log(333, collection, userAccount)
   }, [projectId, sortBy, statusFilter, priceMax, priceMin]);
 
   const handleLoadMore = async () => {
@@ -108,7 +109,7 @@ const Collection = () => {
 
     const nextPage = currentPage + 1;
     setCurrentPage(nextPage);
-    await fetchNFTs(false);
+    await fetchNFTs(false, nextPage);
   };
 
   // function getSignatureListingsForCollection(nftContract) {
@@ -424,7 +425,10 @@ const Collection = () => {
 
               <div className="filter-group">
                 <label>Status</label>
-                <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
+                <select value={statusFilter} onChange={(e) => {
+                  setStatusFilter(e.target.value);
+                  setCurrentPage(1);
+                }}>
                   <option value="all">All NFTs</option>
                   <option value="listed">Listed NFTs</option>
                 </select>

@@ -22,7 +22,7 @@ export const fetchCollections = async (page, chainId) => {
   }
 };
 
-export const getNftCollection = async ({ sortBy, priceRangeMin, priceRangeMax, pageNum, pageSize, projectIn }) => {
+export const getNftCollection = async ({ sortBy, priceRangeMin, priceRangeMax, pageNum, pageSize, projectIn, stateIn }) => {
   try {
     const res = await axios.post(
       `${API_BASE_URL}/marketplace/okx/get-nfts`,
@@ -33,6 +33,7 @@ export const getNftCollection = async ({ sortBy, priceRangeMin, priceRangeMax, p
         pageNum,
         pageSize,
         projectIn,
+        stateIn
       },
       {
         headers: {

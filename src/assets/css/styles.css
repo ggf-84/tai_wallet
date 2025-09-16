@@ -429,16 +429,26 @@ input[type="number"] {
 }
 
 .nft-tairun {
+    border: 3px solid #FFE;
     position: absolute;
     top: 7px;
     right: 7px;
     font-size: 0.9rem;
-    padding: 2px 6px 5px;
+    padding: 0px 4px 3px;
     background: var(--primary-color);
     color: #F8F9FAFF;
     font-weight: bold;
     font-style: italic;
     border-radius: 25px;
+}
+
+.btn-not-listed {
+    background: #818181;
+    cursor: default;
+}
+.btn-not-listed:hover {
+    opacity: 1!important;
+    box-shadow:none;
 }
 
 .collection-info h3 {

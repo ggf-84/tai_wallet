@@ -54,7 +54,7 @@ const Collection = () => {
   const [totalItems, setTotalItems] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  const fetchNFTs = async (reset = true) => {
+  const fetchNFTs = async (reset = true, page = 1) => {
     setLoading(true);
     try {
       const res = await getListingNft({
@@ -63,11 +63,11 @@ const Collection = () => {
         max_price: priceMax,
         sort_by: sortBy,
         per_page: 50,
-        page: currentPage,
+        page: page,
       });
 
       const items = res.data || [];
-      console.log(25456789, items)
+
       setNfts(reset ? items : (prevNfts) => [...prevNfts, ...items]);
       setTotalItems(res?.pagination?.total);
       setHasMore((prev) => res?.pagination?.total > (reset ? items.length : loadedItems + items.length));
@@ -104,7 +104,7 @@ const Collection = () => {
 
     const nextPage = currentPage + 1;
     setCurrentPage(nextPage);
-    await fetchNFTs(false);
+    await fetchNFTs(false, nextPage);
   };
 
   // function getSignatureListingsForCollection(nftContract) {
@@ -284,11 +284,11 @@ const Collection = () => {
             <div className="nfts-grid">
               {/* eslint-disable-next-line array-callback-return */}
               {nfts?.map((nft, i) => {
-                  if (nft.listing.seller.toLowerCase() !== userAccount?.toLowerCase()) {
+                  // if (nft.listing.seller.toLowerCase() !== userAccount?.toLowerCase()) {
                     return (
                       <div key={i}>
                         <NFTCard
-                          nft={nft}
+                          nft={nft.listings[0] ?? nft}
                           buyNFT={buyItem}
                           makeOffer={makeOffer}
                           cancelListing={cancelListing}
@@ -298,7 +298,7 @@ const Collection = () => {
                         />
                       </div>
                     )
-                  }
+                  // }
                 }
               )}
             </div>
